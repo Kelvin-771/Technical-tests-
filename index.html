@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Reverse a String</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
 </head>
 <body>
-    <h2>Reverse a String</h2>
-    <input type="text" id="textInput" placeholder="Type something">
-    <button onclick="reverseString()">Reverse</button>
-    <p id="output"></p>
+    <h1>FizzBuzz from 1 to 50</h1>
+    <div id="output"></div>
 
     <script>
-        function reverseString() {
-            let text = document.getElementById("textInput").value;
-            let reversed = "";
-            for (let i = text.length - 1; i >= 0; i--) {
-                reversed += text[i];
+        let output = document.getElementById('output');
+
+        for (let number = 1; number <= 50; number++) {
+            if (number % 3 === 0 && number % 5 === 0) {
+                output.innerHTML += "FizzBuzz<br>";
+            } else if (number % 3 === 0) {
+                output.innerHTML += "Fizz<br>";
+            } else if (number % 5 === 0) {
+                output.innerHTML += "Buzz<br>";
+            } else {
+                output.innerHTML += number + "<br>";
             }
-            document.getElementById("output").innerText = reversed;
         }
     </script>
 </body>
